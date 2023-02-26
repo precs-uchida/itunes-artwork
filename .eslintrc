@@ -57,6 +57,7 @@
           ".tsx"
         ]
       }
-    ]
+    ],
+    "no-restricted-exports": "off"
   }
 }
