@@ -11,7 +11,7 @@ function ArtWorkList({ artWorks }: Props) {
       <span>全{artWorks.resultCount}件</span>
       {artWorks.results.map((v) => (
         <div key={v.collectionId}>
-          <img src={v.artworkUrl100} alt="" />
+          <img src={v.artworkUrl100} alt={v.collectionName} />
           <div>{v.artistName}</div>
           <div>{v.collectionName}</div>
         </div>

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import SearchForm from './SearchForm';
 import ArtWorkList from './ArtWorkList';
 import { SearchResponse } from '../domain/Apple/SearchResponse';
-
-const API_URL = 'https://itunes.apple.com/';
+import AppleAPIClient from '../infrastructures/AppleAPIClient';
 
 function App() {
   const [artWorks, setArtWorks] = useState<SearchResponse>({ resultCount: 0, results: [] });
@@ -12,9 +11,8 @@ function App() {
       setArtWorks({ resultCount: 0, results: [] });
     }
 
-    const results: SearchResponse = await fetch(
-      `${API_URL}search?term=${keyword}&country=jp&media=music&entity=album`,
-    ).then((response) => response.json());
+    const results = await AppleAPIClient.searchAlbum(keyword);
+    console.log(results);
 
     setArtWorks(results);
   };
