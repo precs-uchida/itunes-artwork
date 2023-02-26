@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import SearchForm from './SearchForm';
-import ArtWorkList from './ArtWorkList';
-import { SearchResponse } from '../domain/Apple/SearchResponse';
-import AppleAPIClient from '../infrastructures/AppleAPIClient';
+import SearchForm from '@/components/SearchForm';
+import ArtWorkList from '@/components/ArtWorkList';
+import { SearchResponse } from '@/domain/Apple/SearchResponse';
+import AppleAPIClient from '@/infrastructures/AppleAPIClient';
 
 function App() {
   const [artWorks, setArtWorks] = useState<SearchResponse>({ resultCount: 0, results: [] });
@@ -12,7 +12,6 @@ function App() {
     }
 
     const results = await AppleAPIClient.searchAlbum(keyword);
-    console.log(results);
 
     setArtWorks(results);
   };

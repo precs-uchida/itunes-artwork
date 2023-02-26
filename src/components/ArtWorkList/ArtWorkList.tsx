@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchResponse } from '../../domain/Apple/SearchResponse';
+import { SearchResponse } from '@/domain/Apple/SearchResponse';
 
 type Props = {
   artWorks: SearchResponse;

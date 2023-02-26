@@ -1,4 +1,4 @@
-import { SearchResponse } from '../../domain/Apple/SearchResponse';
+import { SearchResponse } from '@/domain/Apple/SearchResponse';
 
 export default class AppleAPIClient {
   private static API_URL = 'https://itunes.apple.com/';
